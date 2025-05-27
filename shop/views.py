@@ -69,7 +69,6 @@ def add_comment(request, pk):
 
 
 
-@login_required
 def customers_list(request):
     customers = Customer.objects.all()
     return render(request, 'shop/customers.html', context={'customers': customers})

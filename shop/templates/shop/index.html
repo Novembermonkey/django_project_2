@@ -225,7 +225,7 @@
                           </a>
                           <!-- more inner pages-->
                         </li>
-                        <li class="nav-item"><a class="nav-link" href="{% url 'shop:product_detail' pk=5 %}" aria-expanded="false">
+                        <li class="nav-item"><a class="nav-link" href="{% url 'shop:product_detail' pk=12 %}" aria-expanded="false">
                             <div class="d-flex align-items-center"><span class="nav-link-text ps-1">Product details</span>
                             </div>
                           </a>
@@ -259,7 +259,7 @@
                       </a>
                       <!-- more inner pages-->
                     </li>
-                    <li class="nav-item"><a class="nav-link" href="app/e-commerce/customer-details.html" aria-expanded="false">
+                    <li class="nav-item"><a class="nav-link" href="{% url 'shop:customer_detail' pk=6 %}" aria-expanded="false">
                         <div class="d-flex align-items-center"><span class="nav-link-text ps-1">Customer details</span>
                         </div>
                       </a>
@@ -403,19 +403,19 @@
                       </a>
                       <!-- more inner pages-->
                       <ul class="nav collapse false" id="card">
-                        <li class="nav-item"><a class="nav-link" href="pages/authentication/card/login.html" aria-expanded="false">
+                        <li class="nav-item"><a class="nav-link" href="{% url 'users:login_page' %}" aria-expanded="false">
                             <div class="d-flex align-items-center"><span class="nav-link-text ps-1">Login</span>
                             </div>
                           </a>
                           <!-- more inner pages-->
                         </li>
-                        <li class="nav-item"><a class="nav-link" href="pages/authentication/card/logout.html" aria-expanded="false">
+                        <li class="nav-item"><a class="nav-link" href="{% url 'users:logout_page' %}" aria-expanded="false">
                             <div class="d-flex align-items-center"><span class="nav-link-text ps-1">Logout</span>
                             </div>
                           </a>
                           <!-- more inner pages-->
                         </li>
-                        <li class="nav-item"><a class="nav-link" href="pages/authentication/card/register.html" aria-expanded="false">
+                        <li class="nav-item"><a class="nav-link" href="{% url 'users:register_page' %}" aria-expanded="false">
                             <div class="d-flex align-items-center"><span class="nav-link-text ps-1">Register</span>
                             </div>
                           </a>
