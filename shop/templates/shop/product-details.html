@@ -1754,9 +1754,9 @@
                   <div class="mb-2 mt-3">
                       {% for i in "12345" %}
                           {% if forloop.counter <= product.avg_rating %}
-                              <span class="fa fa-star text-warning"></span>
+                              <span class="fas fa-star text-warning"></span>
                           {% else %}
-                              <span class="far fa-star"></span>
+                              <span class="far fa-star text-warning"></span>
                           {% endif %}
                       {% endfor %}
                       <span class="ms-1">({{ product.avg_rating }})</span>

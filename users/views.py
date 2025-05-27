@@ -39,8 +39,11 @@ def register_page(request):
         if form.is_valid():
             user = form.save(commit=False)
             user.set_password(form.cleaned_data['password'])
+            user.is_staff = False
+            user.is_superuser = False
             user.save()
-            return redirect('shop:product_list')
+            login(request, user)
+            return redirect('shop:index')
 
 
     return render(request, 'users/register.html', {"form": form})

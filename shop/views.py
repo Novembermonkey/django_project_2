@@ -6,8 +6,6 @@ from .models import Product, Category, Customer
 from django.http.response import HttpResponse
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from django.db.models import Avg
-from django.db.models.functions import Round
 # Create your views here.
 
 def index(request, category_title = None):
@@ -47,7 +45,6 @@ def product_list(request, category_name = None):
     if search_query:
         products = products.filter(name__icontains=search_query)
 
-    products = products.annotate(avg_rating=Round(Avg('comments__rating'), precision=2))
     context = {'products': products,}
 
     return render(request, 'shop/product-list.html', context=context)
@@ -71,6 +68,13 @@ def add_comment(request, pk):
 
 def customers_list(request):
     customers = Customer.objects.all()
+    filter_by_date = request.GET.get('filter', '')
+    search_query = request.GET.get('q', '')
+    if search_query:
+        customers = customers.filter(name__icontains=search_query)
+    if filter_by_date:
+        customers = customers.order_by('-created_at')
+
     return render(request, 'shop/customers.html', context={'customers': customers})
 
 def customer_detail(request, pk):
