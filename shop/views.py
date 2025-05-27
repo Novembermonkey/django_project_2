@@ -106,3 +106,11 @@ def customer_edit(request, pk):
         'customer': customer,
     })
 
+@login_required
+def customer_delete(request, pk):
+    customer = get_object_or_404(Customer, pk=pk)
+    if request.method == 'POST':
+        customer.delete()
+        return redirect('shop:customers')
+    return render(request, 'shop/customer/delete.html', context={'customer': customer})
+

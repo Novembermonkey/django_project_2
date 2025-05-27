@@ -1800,7 +1800,7 @@
                           <div class="dropdown-menu dropdown-menu-end border py-0" aria-labelledby="customer-dropdown-0">
                             <div class="bg-white py-2">
                                 <a class="dropdown-item" href="{% url 'shop:customer_edit' customer.id %}">Edit</a>
-                                <a class="dropdown-item text-danger" href="#!">Delete</a></div>
+                                <a class="dropdown-item text-danger" href="{% url 'shop:customer_delete' customer.id %}">Delete</a></div>
                           </div>
                         </div>
                       </td>
